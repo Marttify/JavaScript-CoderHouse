@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- start of header -->
+    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img class="w-25 m-0 p-0" src="#" alt="Logotipo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Prduct</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Descount</a>
+                    </li>
+                </ul>
+                <form class="d-flex m-auto">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <button class="btn btn-dark m-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i class="fa-sharp fa-solid fa-cart-plus"></i><span class="cuenta-carrito">$0</span></button>
+
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Offcanvas right</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <section class="sectionCart">
+                            <button type="button" class="vaciarCarrito text-center d-flex m-auto my-5">
+                                Vaciar Carrito
+                            </button>
+                            <div class="sectionCart__header d-flex justify-content-between">
+                                <div class="column1">Item</div>
+                                <div class="column2">Product</div>
+                                <div class="column3">Units</div>
+                            </div>
+                            <div class="cart__To--The-Product mt-5 mb-5">
+                                <div class="cart-Items d-flex flex-row justify-content-around text-center align-items-center">
+                                    <img class="w-25" src="#" alt="producto">
+                                    <div class="sectionCart__header d-flex flex-column justify-content-between m-auto"> 
+                                        <h3 class="cart__Nombre">
+                                            Mate pampero
+                                        </h3>
+                                        <span class="cart__Precio">
+                                            $1000
+                                        </span>
+                                    </div>
+                                    <div class=" d-flex flex-row">
+                                        <div class="btn minus">-</div>
+                                        <span class="cuenta-carrito h-25 w-25">0</span>
+                                        <div class="btn plus">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cart__To--The-Product mt-5 mb-5">
+                                <div class="cart-Items d-flex flex-row justify-content-around text-center align-items-center">
+                                    <img class="w-25" src="/assets/image/Termos/Stanley/Stanley.jpg" alt="producto">
+                                    <div class="sectionCart__header d-flex flex-column justify-content-between m-auto"> 
+                                        <h3 class="cart__Nombre">
+                                            Termo Stanley
+                                        </h3>
+                                        <span class="cart__Precio">
+                                            $4000
+                                        </span>
+                                    </div>
+                                    <div class=" d-flex flex-row">
+                                        <div class="btn minus">-</div>
+                                        <span class="cuenta-carrito h-25 w-25">0</span>
+                                        <div class="btn plus">+</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="nav-link d-flex text-centers m-auto position-fixed bottom-0 bg-white m-4 m-auto">
+                                
+                                <p class="text-dark"><span class="cuenta-carrito">0</span><i class="fa-solid fa-cart-plus"></i>Total: <span>$</span><span id="total-carrito">0</span></p>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- the end of the header -->
+
+    <main class="main">
+        <section class="d-flex flex-lg-wrap justify-content-center gap-3">
+            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron1">
+            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron2">
+            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron3">
+            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron4">
+            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron5">
+            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron6">
+        </section>
+        <section id="descuento" class="main__Descuentos">
+            <div class="formContainer">
+                <h3>Calculate discounted price! </h3>
+                <form id="formulario">
+    
+                    <label for="inputPrice">Enter the price of the product</label>
+                    <input type="number" id="inputPrice" placeholder="Price to product" />
+    
+                    <label for="inputDiscount">Enter the discount that appears on your product.</label>
+                    <input  type="number" id="inputDiscount" placeholder="Descount to the product" />
+    
+                    <button class="buttonDescount bg-dark" type="button" onclick="calculos()" >
+                        Calculate 
+                    </button>
+                    
+                    <div class="formularioTextos">
+                        <p id="colorDescount"></p>
+                        <p id="printDescount" class="bg-dark"></p>
+                    </div>
+                </form>
+            </div>
+        </section>
+        <section class="w-50 m-auto ">
+            <form>
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                </div>
+                <div class="mb-3">
+                  <label for="exampleInputPassword1" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+        </section>
+    </main>
+
+    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    
+    <!-- Script propio -->
+    <script src="js/app.js"></script>
+    <script src="js/descuento.js"></script>
+    <!-- Script Boostrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!--FontAwesome -->
+    <script src="https://kit.fontawesome.com/19c7f2fb8c.js" crossorigin="anonymous"></script>
+</body>
+</html>
