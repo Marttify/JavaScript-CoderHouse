@@ -145,7 +145,7 @@ https://drive.google.com/file/d/13HzynwN1yZNb7QKqfNBgXvoo4hJSkyKT/view
         // Si la condicion se cumple se ejecuta el codigo
     }
 
-    DO… WHILE
+    // DO… WHILE
     do{
         // Se repite el codigo dentro hasta que la condicion se cumpla
     }while(condition)

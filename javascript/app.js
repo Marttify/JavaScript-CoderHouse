@@ -61,20 +61,24 @@ for (let i=1;i<=cant;i++){
     const nota = parseInt(prompt(`Ingrese la nota ${i}`))
     totalNota += nota
     if (nota >= 7) {
+        // Si el promedio es mayor o igual a 7 entonces informarle que aprobó la materia
         alert(aprobo);
     } else {
+        // sino que debe recuperar.
         alert(recupera);
     }
 }
 const promedio = (totalNota*cant) / 100
 
+// y luego mostrarle el promedio de las mismas.
 if (promedio > 0) {
     console.log(`El promedio es de: ${promedio}`);
 } else {
     console.log("Su promedio es cero o no se ingresaron datos!");
 }
 
-
+// y luego mostrarle el promedio de las mismas.( alternativa sin condicional para verificar si se ingresaron datos)
 console.log(`El promedio es de : ${promedio}`);
-// y luego mostrarle el promedio de las mismas.
-// Si el promedio es mayor o igual a 7 entonces informarle que aprobó la materia, sino que debe recuperar.
+
+
+
