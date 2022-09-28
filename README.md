@@ -177,3 +177,13 @@ https://drive.google.com/file/d/13HzynwN1yZNb7QKqfNBgXvoo4hJSkyKT/view
 ```
 
 
+## Tecnologías utilizadas
+
+- HTML5
+- CSS3
+- SASS
+- Bootstrap 5 
+- Font Awezome
+- Javascript
+
+

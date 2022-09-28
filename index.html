@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Artezanias || Jarrones pintados </title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -15,7 +15,8 @@
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">
-                <img class="w-25 m-0 p-0" src="#" alt="Logotipo">
+                Artezanias
+                <img class="w-25 m-0 p-0 img" src="#" alt="Artezanias">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -102,14 +103,70 @@
     <!-- the end of the header -->
 
     <main class="main">
+
         <section class="d-flex flex-lg-wrap justify-content-center gap-3">
-            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron1">
-            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron2">
-            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron3">
-            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron4">
-            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron5">
-            <img src="/assets/image/Captura de Pantalla 2022-09-22 a la(s) 01.02.40.png" alt="Jarron6">
+            <div class="card">
+                <picture class="cardPicture">
+                    <img src="assets/image/jarrones.png" alt="Jarron" srcset="">
+                </picture>
+                <div class="cardInfo">
+                    <p class="cardInfoDescription">Jarron copa 80 cs venecitas exotico decoracion moderno living...</p>
+                    <h2 class="cardInfoPrecio">$30.930</h2>
+                    <p class="cardInfoEnvio">Envio gratis</p>
+                </div>
+            </div>
+            <div class="card">
+                <picture class="cardPicture">
+                    <img src="assets/image/jarrones.png" alt="Jarron" srcset="">
+                </picture>
+                <div class="cardInfo">
+                    <p class="cardInfoDescription">Jarron copa 80 cs venecitas exotico decoracion moderno living...</p>
+                    <h2 class="cardInfoPrecio">$30.930</h2>
+                    <p class="cardInfoEnvio">Envio gratis</p>
+                </div>
+            </div>
+            <div class="card">
+                <picture class="cardPicture">
+                    <img src="assets/image/jarrones.png" alt="Jarron" srcset="">
+                </picture>
+                <div class="cardInfo">
+                    <p class="cardInfoDescription">Jarron copa 80 cs venecitas exotico decoracion moderno living...</p>
+                    <h2 class="cardInfoPrecio">$30.930</h2>
+                    <p class="cardInfoEnvio">Envio gratis</p>
+                </div>
+            </div>
+            <div class="card">
+                <picture class="cardPicture">
+                    <img src="assets/image/jarrones.png" alt="Jarron" srcset="">
+                </picture>
+                <div class="cardInfo">
+                    <p class="cardInfoDescription">Jarron copa 80 cs venecitas exotico decoracion moderno living...</p>
+                    <h2 class="cardInfoPrecio">$30.930</h2>
+                    <p class="cardInfoEnvio">Envio gratis</p>
+                </div>
+            </div>
+            <div class="card">
+                <picture class="cardPicture">
+                    <img src="assets/image/jarrones.png" alt="Jarron" srcset="">
+                </picture>
+                <div class="cardInfo">
+                    <p class="cardInfoDescription">Jarron copa 80 cs venecitas exotico decoracion moderno living...</p>
+                    <h2 class="cardInfoPrecio">$30.930</h2>
+                    <p class="cardInfoEnvio">Envio gratis</p>
+                </div>
+            </div>
+            <div class="card">
+                <picture class="cardPicture">
+                    <img src="assets/image/jarrones.png" alt="Jarron" srcset="">
+                </picture>
+                <div class="cardInfo">
+                    <p class="cardInfoDescription">Jarron copa 80 cs venecitas exotico decoracion moderno living...</p>
+                    <h2 class="cardInfoPrecio">$30.930</h2>
+                    <p class="cardInfoEnvio">Envio gratis</p>
+                </div>
+            </div>
         </section>
+
         <section id="descuento" class="main__Descuentos">
             <div class="formContainer">
                 <h3>Calculate discounted price! </h3>
@@ -121,7 +178,7 @@
                     <label for="inputDiscount">Enter the discount that appears on your product.</label>
                     <input  type="number" id="inputDiscount" placeholder="Descount to the product" />
     
-                    <button class="buttonDescount bg-dark" type="button" onclick="calculos()" >
+                    <button class="buttonDescount bg-dark" type="button" >
                         Calculate 
                     </button>
                     
@@ -132,6 +189,7 @@
                 </form>
             </div>
         </section>
+
         <section class="w-50 m-auto ">
             <form>
                 <div class="mb-3">
@@ -148,15 +206,14 @@
                   <label class="form-check-label" for="exampleCheck1">Check me out</label>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
-              </form>
+            </form>
         </section>
+        
     </main>
-
-    <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
     
     <!-- Script propio -->
-    <script src="js/app.js"></script>
-    <script src="js/descuento.js"></script>
+    <!-- <script src="script/descuento.js"></script> -->
+    <script src="script/validateEmail.js"></script>
     <!-- Script Boostrap 5 -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <!--FontAwesome -->
