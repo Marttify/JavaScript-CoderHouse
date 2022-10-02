@@ -151,12 +151,13 @@ https://drive.google.com/file/d/13HzynwN1yZNb7QKqfNBgXvoo4hJSkyKT/view
     }while(condition)
 
 ```
-# GitHub page url
+
+# https://aguilar1998.github.io/PreEntrega1-Aguilar/
 
 ¿Cómo lo ejecuto en local?
 
-    git clone url # MI URL
-    cd carrito # ingresar a la carpeta del proyecto
+    git clone https://github.com/Aguilar1998/PreEntrega1-Aguilar.git
+    cd PreEntrega-Aguilar1 # ingresar a la carpeta del proyecto
     npm install # instalar las dependencias
     npm run stat # arrancar el proyecto
     npm run dev # levantar el entorno de desarrollo
