@@ -26,14 +26,59 @@ const taza = new Product('Taza para cafe ', 'ceramica', 1000, 6, 'https://www.ho
 // Declaraciones
 
 const arrayProduct = [
-    this.brand,
-    this.material,
-    this.price,
-    this.id,
-    this.thumbnailUrl
+    brand,
+    material,
+    price,
+    id,
+    thumbnailUrl
 ]
 
 
+function accesToProduct(product) {
+    let selectedProduct = product.filter(id)
+    return selectedProduct
+}
+const productSelectedForTheUser = promt("Ingrese el numero de id");
+
+// switch (productSelectedForTheUser) {
+//     case 1:
+//         const returnProduct = ofevolutionOfProduct(accesToProduct(productSelectedForTheUser.price))
+//         alert(returnProduct)
+//         break;
+//     case 2:
+        
+//         break;
+//     case 3:
+        
+//         break;
+//     case 4:
+        
+//         break;
+//     case 5:
+        
+//         break;
+//     case 6:
+        
+//         break;
+//     case 7:
+        
+//         break;
+
+//     default:
+//         break;
+// }
 
 
 // Data entry field 
+
+
+
+// Se debe entregar
+/*
+    Estructura HTML del proyecto. 
+    Variables de JS necesarias. 
+    Funciones esenciales del proceso a simular.
+    Objetos de JS.
+    Arrays.
+    Métodos de búsqueda y filtrado sobre el Array.
+*/

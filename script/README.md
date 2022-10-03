@@ -177,7 +177,7 @@
     Luego invocar al menos tres (3) objetos usando esta clase.
     */
 
-    class Tienda{
+    class Store{
         constructor(nombre,direccion,propietario,rubro){
             this.nombre = nombre;
             this.direccion = direccion;
@@ -185,20 +185,20 @@
             this.rubro = rubro;
         }
         //resolucion ej 3
-        estaAbierto(hora){
-            if ((hora >=8 && hora <=12)||(hora >=15 && hora <=19)){
+        itIsOpen(hour){
+            if ((hour >=8 && hour <=12)||(hour >=15 && hour <=19)){
                 return true;
-            }else if (hora === 0) {
-                return hora
+            }else if (hour === 0) {
+                return hour
             }{
                 return false;
             }
         }
     }
 
-    const tienda1 = new Tienda("Carrefour","Av Maipu 234","Jorge Hernandez","Alimentos");
-    const tienda2 = new Tienda("Dia","Julio A. Roca 1200","Pablo Aguilar","Alimentos");
-    const tienda3 = new Tienda("Coto","Av. San Martin 4501","Alfred Coto","Alimentos");
+    const store1 = new Store("Carrefour","Av Maipu 234","Jorge Hernandez","Alimentos");
+    const store2 = new Store("Dia","Julio A. Roca 1200","Pablo Aguilar","Alimentos");
+    const store3 = new Store("Coto","Av. San Martin 4501","Alfred Coto","Alimentos");
 
 
 
@@ -214,19 +214,19 @@
     */
 
 
-    let horario = 10
+    let hour = 10
 
-    for (let i=1; i<=horario; i++){
-        let horario = parseInt(prompt("Ingresa el horario en el que iras a la tienda"));
+    for (let i=1; i<=hour; i++){
+        let hour = parseInt(prompt("Ingresa el horario en el que iras a la tienda"));
         let selectStore = prompt(String("Ingresa entre las siguientes tiendas, cual deseas saber si esta abierta\n1-Carrefour\n2-Dia\n3-Coto"));
-        let estadoTienda = tienda1.estaAbierto(horario);
-        if (estadoTienda === true) {
+        let storeStatus = store1.itIsOpen(hour);
+        if (storeStatus === true) {
             alert(`${selectStore} esta abierto, te esperamos!`);
-        }else if (estadoTienda === 0) {
+        }else if (storeStatus === 0) {
             alert("A seleccionado la opcion para salir. muchas gracias por utilizar este sitio web")
             break
         }else{
-            alert("Esta cerrado !");
+            alert(`${selectStore} esta cerrado !`);
         }
     }
 ```

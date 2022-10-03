@@ -5,7 +5,7 @@
 
 .card {
   height: max-content;
-  width: 25%;
+  width: 250px;
   background-color: white; }
   .cardPicture {
     height: 60%; }
@@ -26,7 +26,12 @@
 .main {
   max-width: 85%;
   margin: auto;
-  padding: 10rem 5rem 10rem; }
+  padding: 10rem 5rem 10rem;
+  flex-wrap: wrap; }
+  .main section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; }
   .main .main__Descuentos {
     display: flex;
     text-align: center;
