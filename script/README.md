@@ -230,3 +230,109 @@
         }
     }
 ```
+
+
+
+
+
+## Array
+``` JavaScript
+    // Array
+    /*--------------Remove---------------*/
+
+
+    const listaOfProduct = [
+        "mate",
+        "termo",
+        "yerba",
+        "bombilla",
+        "agua"
+    ]
+
+
+
+    const remove = (nombre) => {
+        // busco su indice en el array
+        let newlist = listaOfProduct.indexOf(nombre)
+        // si existe, o sea es distinto a -1 lo borro con splice
+        if (newlist !== -1) {
+            listaOfProduct.splice(newlist, 1);
+            alert(`Se elimino a ${listaOfProduct[newlist]}\nEl nuevo array contiene los siguientes productos: ${listaOfProduct}`);
+        }
+    }
+
+    const dataDelete = prompt("mate, termo, yerba, bombilla, agua\n Ingrese el producto que desea eliminar.");
+    remove(dataDelete);
+
+
+
+
+
+    /*--------------search---------------*/
+
+    const search = (product) => {
+        let selectedProduct = listaOfProduct.indexOf(product);
+        if (selectedProduct !== -1) {
+            alert(`El producto que buscaste es: ${listaOfProduct[selectedProduct]}`);
+        } else {
+            alert(`El producto ${product}, no se encuentra en la lista.`);
+        }
+    } 
+
+    const searchProduct = prompt("Que desea buscar");
+    search(searchProduct)
+
+
+
+// Para agregar un producto al objeto.
+arrayProduct.push(
+    {
+        id:76,
+        nombre:"macdonals",
+        detalle:"burger",
+        precio:789
+    }
+);
+//for...of recorre todo el array de objetos
+for(const producto of productos){
+    console.log(producto.nombre+" Precio $:"+producto.precio);
+}
+
+
+
+/*-----------------------------------*/
+
+//Diapo ejemplo
+class ProductMatero {
+    constructor(nombre, precio) {
+        this.nombre  = nombre.toUpperCase();
+        this.precio  = parseFloat(precio);
+    }
+    sumaIva() {
+        this.precio = this.precio * 1.21;
+    }
+}
+//Declaramos un array de productos para almacenar objetos
+const productMatero = [];
+
+
+function condicional() {
+    for (let i = 1; i <= intentos; i++) {
+        // Data entry field 
+        const addData1 = prompt("ingrese el nombre del producto")
+        const addData2 = prompt("ingrese el id del producto")
+
+        if (addData1 === ProductMatero.nombre && addData2 === ProductMatero.precio) {
+            productMatero.push(new ProductMatero(addData1, addData2));
+            break
+        } 
+    }
+}
+
+
+//Iteramos el array con for...of para modificarlos a todos
+for (const product of productMatero){
+    product.sumaIva();
+}
+
+```

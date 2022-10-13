@@ -151,6 +151,31 @@ https://drive.google.com/file/d/13HzynwN1yZNb7QKqfNBgXvoo4hJSkyKT/view
     }while(condition)
 
 ```
+## Funciones de orden superior
+``` JavaScript
+    // es aquella que retorna una función, o recibe una función por parámetro. Este tipo de funciones nos permiten abstraernos sobre acciones y no sólo valores. 
+
+    let mayorQueDiez = (m) => m > 10
+
+    // Ejemplo de arrow function
+    
+    function asignarOperacion(op) {
+        if (op == "sumar") {
+            return (a, b) => a + b
+        } else if (op == "restar") {
+            return (a, b) => a - b
+        }
+    }
+
+    let suma = asignarOperacion("sumar")
+    let resta = asignarOperacion("restar")
+
+    console.log( suma(4, 6) )  //  10
+    console.log( resta(5, 3) )  //  2
+
+```
+
+![Captura de Pantalla 2022-10-07 a la(s) 21 08 04](https://user-images.githubusercontent.com/89709211/194677118-70550b15-1041-482c-8947-5bdd4353c7d7.png)
 
 # https://aguilar1998.github.io/PreEntrega1-Aguilar/
 

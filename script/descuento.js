@@ -1,11 +1,27 @@
 
 
+```Javascript
+    /*
+        Seleccionar un producto e indicar si tienes descuento. Si tiene mostrarlo con un parrafo.
+    
+    
+
+    */
+```
+
+
+
+
 
 
 // Data entry field 
 
-const priceInput = parseInt(prompt("Ingrese el precio"))
-const discountInput = parseInt(prompt("De cuanto es el descuento"))
+
+
+
+const priceInput = document.getElementsByClassName('dropdown-menu')
+const discountInput = document.getElementsByClassName('dropdown-menu')
+
 
 
 //Function
@@ -15,6 +31,7 @@ function calculateDiscountedPrice(price, discount) {
     const discountedPrice = (price * discountedPricePercentage) / 100;
     return discountedPrice;
 }
+
 function conditional(disconut) {
     if (disconut !== 0) {
         const mensaje = alert(`El precio con descuento es de: $${disconut}`);
@@ -24,6 +41,7 @@ function conditional(disconut) {
         return mensaje
     }
 }
+
 function calculos(){
     const discountedPrice1 = calculateDiscountedPrice(priceInput, discountInput);
     const priceOrDiscount = conditional(discountedPrice1)
