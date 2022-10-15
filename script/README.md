@@ -335,4 +335,48 @@ for (const product of productMatero){
     product.sumaIva();
 }
 
+
+
+
+//
+
+
+const yerbaMate = {
+    id:1,
+    imagen:"./imagenes/yerba.jpg",
+    nombre:"Yerba mate Taragui",
+    descripcion:"Yerba mate con palo de 1 kg",
+    precio:800
+}
+
+let tarjetas = document.getElementById("tarjetas");
+tarjetas.innerHTML = `
+    <div class="card" style="width: 18rem;">
+        <img src=${yerbaMate.imagen} class="card-img-top" alt=${yerbaMate.nombre}>
+        <div class="card-body">
+            <h5 class="card-title">${yerbaMate.nombre}</h5>
+            <p class="card-text">${yerbaMate.descripcion}</p>
+            <p class="card-text">$ ${yerbaMate.precio}</p>
+            <button id="miBoton" class="btn btn-primary">Comprar</button>
+        </div>
+    </div>
+`;
+
+//OPCION 2
+boton.onclick = () => {
+    alert("Agregaste Yerba Mate al carrito");
+    carro.push(yerbaMate);
+    console.log(carro);
+}
+
+boton.onmouseover = () => {
+    console.log("Queres comprar Yerba Mate Taragui, aprovecha la oferta!!!");
+    boton.className="btn btn-danger";
+}
+
+boton.onmouseout = () => {
+    boton.className="btn btn-primary";
+}
+
+button.document
 ```
