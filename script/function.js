@@ -24,18 +24,19 @@ function renderPorduct() {
 
         container.innerHTML += `
 
-            <div class="card-group card col-sm-2">
+            <div class=" col card-group card col-sm-2">
                 <img src=${product.img} class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">${product.id}</h5>
+                    <h5 class="card-title">Stock: ${product.stock}</h5>
                     <p class="card-text">${product.name}</p>
                     <p class="card-text text-muted">$<s>${product.price}</s></p>
                     <p class="card-text">${product.discount()}</p>
-                    <button id="btn${product.id}" class="btn btn-primary">Comprar</button>
+                    <button id="btn${product.id}" class="btn btn-outline-success">Comprar</button>
                 </div>
             </div>
 
         `;
+
     }
 
     //Event
@@ -45,17 +46,21 @@ function renderPorduct() {
         document.getElementById(`btn${product.id}`).addEventListener("click", function () {
             addToCart(product);
         });
+
     })
 }
+
 renderPorduct();
 
 
 /************** Add the selected product to the cart. **************/
 function addToCart(buyProduct) {
+
     // Add cart
     cart.push(buyProduct);
+    //  Info
+    alert(` ${buyProduct.name} se agregado al carrito!`);
 
-    alert(` ${ buyProduct.name} se agregado al carrito!`);
     // Print the card in the cart.
     document.getElementById("containerCart").innerHTML += `
 
@@ -76,30 +81,33 @@ function addToCart(buyProduct) {
 
                 <div class=" d-flex flex-row">
                     <div class="btn minus">-</div>
-                    <span class="cuenta-carrito h-25 w-25">0</span>
+                    <span class="cuenta-carrito h-25 w-25">0</span>h
                     <div class="btn plus">+</div>
                 </div>
 
             </div>
         </div>
-
     `;
+
+
     // (Conditional) To know if there is a discount or not.
     if (discountDay === true) {
         const acumulator = (acum, producto) => acum + producto.discountPrice();
         cartTotal = cart.reduce(acumulator, 0);
-        
     } else {
         const acumulator = (accumulator, producto) => accumulator + producto.price
         cartTotal = cart.length > 0 ? cart.reduce(acumulator) : 0;
     }
+
     // print the total price in the navbar.
-    let alltotal = document.getElementById("total-carrito");
+    const alltotal = document.getElementById("total-carrito");
     alltotal.innerText = `Total: $${cartTotal}`;
+
     // print the total price in the cart.
-    let alltotal2 = document.getElementById("total-carrito2");
-    alltotal2.innerText= cartTotal;
+    const alltotal2 = document.getElementById("total-carrito2");
+    alltotal2.innerText = cartTotal;
+    
 }
 
 
-  
+

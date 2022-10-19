@@ -40,12 +40,12 @@ class Product{
 
 const familiaLechusa = new Product('Familia lechusa', 0, 1500, "assets/image/bienvenidos.jpeg", 3);
 const portaSaumerio = new Product('Porta Saumerio', 2, 300, "assets/image/saumerio.jpeg", 6);
-const jarrones = new Product('Jarrones', 3, 2500, "assets/image/jarrones.png", 4);
+const jarrones = new Product('Jarrones', 3, 2500, "assets/image/cascadaAromatizada.jpeg", 4);
 const catBlack = new Product('Gato negro', 4, 1800, "assets/image/catBlack.jpeg", 1);
 const catwhite = new Product('Gato White', 5, 1800, "assets/image/catWhite.jpeg", 2);
-const welcomeDogs = new Product('Bienvenida', 6, 950, "assets/image/WelcomeDogs.jpeg", 2);
+const welcomeDogs = new Product('Bienvenida', 6, 950, "assets/image/welcomeDogs.jpeg", 2);
 const lechusa = new Product('Lechusa', 7, 1300, "assets/image/lechusa.jpeg", 3);
-
+const s = new Product('Sin nombre', 8, 1530,"assets/image/s.jpeg", 2);
 
 
 /************** Create array for new product **************/
@@ -57,11 +57,6 @@ const allProductt = [
     catBlack,
     catwhite,
     welcomeDogs,
-    lechusa
-]
-
-const dataProductSearch = allProductt.map(({ id }) => id)
-
-
-const itsCheap = allProductt => allProductt.price < 600;
-const productCheap = allProductt.filter(itsCheap)
+    lechusa,
+    s
+];
