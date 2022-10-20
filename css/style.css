@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box; }
 
+body {
+  background-color: #ebebeb; }
+
 .card {
   height: max-content;
   width: 250px;
@@ -21,6 +24,16 @@
     .cardInfoEnvio {
       color: #1bb21b;
       font-size: 20px; }
+
+.presentation {
+  margin-top: 7%;
+  height: 70vh;
+  bottom: 0;
+  object-fit: cover;
+  width: 100%; }
+
+.carouselHeigth {
+  height: 70vh; }
 
 /* Form */
 .main {

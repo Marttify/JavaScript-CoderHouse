@@ -284,99 +284,102 @@
 
 
 
-// Para agregar un producto al objeto.
-arrayProduct.push(
-    {
-        id:76,
-        nombre:"macdonals",
-        detalle:"burger",
-        precio:789
+    // Para agregar un producto al objeto.
+    arrayProduct.push(
+        {
+            id:76,
+            nombre:"macdonals",
+            detalle:"burger",
+            precio:789
+        }
+    );
+    //for...of recorre todo el array de objetos
+    for(const producto of productos){
+        console.log(producto.nombre+" Precio $:"+producto.precio);
     }
-);
-//for...of recorre todo el array de objetos
-for(const producto of productos){
-    console.log(producto.nombre+" Precio $:"+producto.precio);
-}
 
 
 
-/*-----------------------------------*/
+    /*-----------------------------------*/
 
-//Diapo ejemplo
-class ProductMatero {
-    constructor(nombre, precio) {
-        this.nombre  = nombre.toUpperCase();
-        this.precio  = parseFloat(precio);
+    //Diapo ejemplo
+    class ProductMatero {
+        constructor(nombre, precio) {
+            this.nombre  = nombre.toUpperCase();
+            this.precio  = parseFloat(precio);
+        }
+        sumaIva() {
+            this.precio = this.precio * 1.21;
+        }
     }
-    sumaIva() {
-        this.precio = this.precio * 1.21;
+    //Declaramos un array de productos para almacenar objetos
+    const productMatero = [];
+
+
+    function condicional() {
+        for (let i = 1; i <= intentos; i++) {
+            // Data entry field 
+            const addData1 = prompt("ingrese el nombre del producto")
+            const addData2 = prompt("ingrese el id del producto")
+
+            if (addData1 === ProductMatero.nombre && addData2 === ProductMatero.precio) {
+                productMatero.push(new ProductMatero(addData1, addData2));
+                break
+            } 
+        }
     }
-}
-//Declaramos un array de productos para almacenar objetos
-const productMatero = [];
 
 
-function condicional() {
-    for (let i = 1; i <= intentos; i++) {
-        // Data entry field 
-        const addData1 = prompt("ingrese el nombre del producto")
-        const addData2 = prompt("ingrese el id del producto")
-
-        if (addData1 === ProductMatero.nombre && addData2 === ProductMatero.precio) {
-            productMatero.push(new ProductMatero(addData1, addData2));
-            break
-        } 
+    //Iteramos el array con for...of para modificarlos a todos
+    for (const product of productMatero){
+        product.sumaIva();
     }
-}
-
-
-//Iteramos el array con for...of para modificarlos a todos
-for (const product of productMatero){
-    product.sumaIva();
-}
 
 
 
 
-//
+    //
 
 
-const yerbaMate = {
-    id:1,
-    imagen:"./imagenes/yerba.jpg",
-    nombre:"Yerba mate Taragui",
-    descripcion:"Yerba mate con palo de 1 kg",
-    precio:800
-}
+    const yerbaMate = {
+        id:1,
+        imagen:"./imagenes/yerba.jpg",
+        nombre:"Yerba mate Taragui",
+        descripcion:"Yerba mate con palo de 1 kg",
+        precio:800
+    }
 
-let tarjetas = document.getElementById("tarjetas");
-tarjetas.innerHTML = `
-    <div class="card" style="width: 18rem;">
-        <img src=${yerbaMate.imagen} class="card-img-top" alt=${yerbaMate.nombre}>
-        <div class="card-body">
-            <h5 class="card-title">${yerbaMate.nombre}</h5>
-            <p class="card-text">${yerbaMate.descripcion}</p>
-            <p class="card-text">$ ${yerbaMate.precio}</p>
-            <button id="miBoton" class="btn btn-primary">Comprar</button>
+    let tarjetas = document.getElementById("tarjetas");
+    tarjetas.innerHTML = `
+        <div class="card" style="width: 18rem;">
+            <img src=${yerbaMate.imagen} class="card-img-top" alt=${yerbaMate.nombre}>
+            <div class="card-body">
+                <h5 class="card-title">${yerbaMate.nombre}</h5>
+                <p class="card-text">${yerbaMate.descripcion}</p>
+                <p class="card-text">$ ${yerbaMate.precio}</p>
+                <button id="miBoton" class="btn btn-primary">Comprar</button>
+            </div>
         </div>
-    </div>
-`;
+    `;
 
-//OPCION 2
-boton.onclick = () => {
-    alert("Agregaste Yerba Mate al carrito");
-    carro.push(yerbaMate);
-    console.log(carro);
-}
+    //OPCION 2
+    boton.onclick = () => {
+        alert("Agregaste Yerba Mate al carrito");
+        carro.push(yerbaMate);
+        console.log(carro);
+    }
 
-boton.onmouseover = () => {
-    console.log("Queres comprar Yerba Mate Taragui, aprovecha la oferta!!!");
-    boton.className="btn btn-danger";
-}
+    boton.onmouseover = () => {
+        console.log("Queres comprar Yerba Mate Taragui, aprovecha la oferta!!!");
+        boton.className="btn btn-danger";
+    }
 
-boton.onmouseout = () => {
-    boton.className="btn btn-primary";
-}
+    boton.onmouseout = () => {
+        boton.className="btn btn-primary";
+    }
 
-button.document
+    button.document
+
+
+    
 ```

@@ -3,8 +3,22 @@
     padding: 0;
     box-sizing: border-box;
 }
+body{
+    background-color: #ebebeb
+}
 @import 'components/card';
 
+.presentation{
+    margin-top: 7%;
+    height: 70vh;
+    bottom:0;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carouselHeigth{
+    height: 70vh;
+}
 
 
 

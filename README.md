@@ -11,6 +11,7 @@ https://drive.google.com/file/d/13HzynwN1yZNb7QKqfNBgXvoo4hJSkyKT/view
 
 
 ## Conceptos generales: sintaxis y variables
+https://www.youtube.com/watch?v=bvkY9ey83yY&t=7s
 
 ```javascript       
     //- Declaraciones.
@@ -25,6 +26,7 @@ https://drive.google.com/file/d/13HzynwN1yZNb7QKqfNBgXvoo4hJSkyKT/view
     //- Prompt, consola y alert.     
     console.log(martify)
 ```
+
 
 ## Control de flujos - Glosario
 ```HTML

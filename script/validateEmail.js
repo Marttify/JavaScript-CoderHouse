@@ -2,16 +2,16 @@
 
 
 // Saved data
-let savedEmail = "aguilarmartin@gmail.com";
-let savedPassword = "coderhouse";
-let intentos = 3;
+const savedEmail = "aguilarmartin@gmail.com";
+const savedPassword = "coderhouse";
+const intentos = 3;
 // let checkRobot = true;
 
 const emailAddress = document.getElementById('exampleInputEmail1')
 const password = document.getElementById('exampleInputPassword1')
 
 // Declaraciones
-var mensaje 
+let mensaje 
 
 function condicional() {
     for (let i = 1; i <= intentos; i++) {

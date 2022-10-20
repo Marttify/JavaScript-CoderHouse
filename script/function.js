@@ -1,21 +1,20 @@
 
 // (array) To save products from the cart.
 const cart = [];
+
 // variable global
 let cartTotal;
+
 // Discount day
 const discountDay = true // false (Print without discount(cart/screen))
-
 
 //Selecte
 let container = document.getElementById("cartContainer");
 let containerNameProduct = document.getElementById("nameProduct");
-// let buttonDelete = document.getElementsByClassName('vaciarCarrito')
 
 
 
 /************** Render the function to the screen. **************/
-
 function renderPorduct() {
 
     // To print the cards on the screen
@@ -46,18 +45,16 @@ function renderPorduct() {
         
     })
 }
-
 renderPorduct();
 
 
 
 /************** Add the selected product to the cart. **************/
 function addToCart(buyProduct) {
-
-    cart.push(buyProduct)
-    //  Info
+    // Add alert information to the user for their purchase(for replace library)
     alert(` ${buyProduct.name} se agregado al carrito!`);
-
+    cart.push(buyProduct)
+    totalPrice()
     // Print the card in the cart.
     document.getElementById("containerCart").innerHTML += `
 
@@ -85,7 +82,12 @@ function addToCart(buyProduct) {
             </div>
         </div>
     `;
+}
 
+
+
+/************** Add the total price to the cart and print is value. **************/
+function totalPrice() {
     // (Conditional) To know if there is a discount or not.
     if (discountDay === true) {
         const acumulator = (acum, producto) => acum + producto.discountPrice();
@@ -96,7 +98,7 @@ function addToCart(buyProduct) {
         cartTotal = cart.length > 0 ? cart.reduce(acumulator) : 0;
         localStorage.setItem('TotalPrice', cartTotal)
     }
-
+    
     // print the total price in the navbar.
     const alltotal = document.getElementById("total-carrito");
     alltotal.innerText = `Total: $${cartTotal}`;
@@ -104,12 +106,31 @@ function addToCart(buyProduct) {
     // print the total price in the cart.
     const alltotal2 = document.getElementById("total-carrito2");
     alltotal2.innerText = cartTotal;
-
-    //Storage
-    const addProductStorage = JSON.stringify(cart);
-    const stringProduct = localStorage.setItem('Cart', addProductStorage)
-    console.log(stringProduct);
 }
 
 
+//Storage
+const addProductStorage = JSON.stringify(cart);
+const stringProduct = localStorage.setItem('Cart', addProductStorage)
+console.log(stringProduct);
 
+
+
+/*****
+    Tareas:
+    Reemplazar la funcion de imprimir el carrito, el total,y aplicar el descuento para poder tomar como parametro una variable a la cual le asignaremos los datos del storage.
+
+
+
+    Consigna de la tercera entrega del proyecto final!!
+
+    ## Optimizarás tu proyecto final a través de la puesta en práctica de lo visto en esta clase según sea conveniente en cada caso.
+    Aspectos a incluir
+
+    ## Operador Ternario / AND / OR. Busca estructuras condicionales simples en tu proyecto y simplifícalas utilizando operador ternario u operadores lógicos AND y OR.
+    Optimización. Con lo visto en clase, optimiza la asignación condicional de variables.
+    Desestructuración. Aplica la desestructuración según corresponda para recuperar propiedades de objetos con claridad y rapidez.
+    Spread. Usa el operador spread para replicar objetos o arrays o, también, para mejorar la lógica de tus funciones.
+
+
+*****/
