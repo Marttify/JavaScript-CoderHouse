@@ -1,0 +1,84 @@
+/* Form */
+
+
+.presentation{
+    margin-top: 7%;
+    height: 70vh;
+    bottom:0;
+    object-fit: cover;
+    width: 100%;
+}
+
+
+.main{
+    max-width: 85%;
+    margin: auto;
+    padding: 10rem 5rem 10rem;
+    flex-wrap: wrap;
+    & section{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .main__Descuentos{
+        display: flex;
+        text-align: center;
+        width: 100%;
+        .formContainer {
+            margin: 5rem auto;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center; 
+            border: 2.5px solid green;
+            border-radius: 15px;
+            align-items: center;
+            padding: 4rem;
+            & #formulario {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: flex-start;
+                height: 500px;
+                padding: 1rem;
+                & input {
+                    margin: 0 auto 16px;
+                    padding: 10px;
+                    border: 1px solid gray;
+                    border-radius: 10px;
+                    width: 35vw;
+                }
+                & .buttonDescount {
+                    width: 50%;
+                    height: 30px;
+                    border-radius: 10px;
+                    border: 0;
+                    color: white;
+                    margin: auto;
+                }
+                .formularioTextos{
+                    height: 30%;
+                    width: 100%;
+                    & #printDescount{
+                        height: max-content;
+                        color: rgb(90, 236, 90);
+                        font-size: 26px;
+                        border-radius: 10px;
+                        opacity: .8;
+                        width: 100%;
+                        margin: 0 auto;
+                    }
+                    & #colorDescount{
+                        font-size: 19px;
+                        color: red;
+                        border-radius: 10px;
+                        padding: 3px;
+                        margin: 0 a;
+                        &:hover{
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
