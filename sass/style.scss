@@ -5,8 +5,10 @@
 @import 'misc/mixins';
 
 // Artials
+
+@import 'artials/footer';
 @import 'components/card';
-@import 'components/card_Discount';
+@import 'components/card-Animate';
 
 // Views
 @import 'views/home';

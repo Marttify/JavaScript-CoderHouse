@@ -1,0 +1,43 @@
+/* ///////////////////////////////////////////////// */
+
+/* Comienzo del footer */
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-top: 1px solid dark;
+    position: relative;
+    bottom: 0%;
+    width: 100%;
+    & .footer__Nav{
+        display: flex;
+        margin: auto;
+        padding: 2rem;
+        & li{
+            margin: 0 1rem;
+            list-style: none;
+        }
+    }
+    & a{
+        margin: auto;
+        & img{
+            height: 60px;
+            margin: 1rem auto 0;
+            border-radius: 100%;
+        }
+    }
+    & .footer__Redes{
+        color: white;
+        padding: 1rem 0;
+        display: flex;
+        justify-content: space-around;
+        border-top: 1px solid #fff;
+        & aside{
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            gap: 2rem;
+        }
+    }
+}
