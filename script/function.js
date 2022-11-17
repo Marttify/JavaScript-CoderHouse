@@ -19,7 +19,20 @@ let toBuy = document.getElementById('toBuy').addEventListener('click', function 
         title: 'Tu compra se realizo con exito!',
         showConfirmButton: false,
         timer: 1500
-      })
+    })
+    dataContainerCart.innerHTML = '';
+                
+    localStorage.clear();
+    
+    // print the total price in the cart.
+    alltotal.innerText = `Total: $ `;
+
+    // print the total price in the navbar.
+    alltotal2.innerText = '';
+
+    setTimeout(function () {
+        location.reload()
+    },1650);
 })
 
 /************** Get data from storage. **************/
