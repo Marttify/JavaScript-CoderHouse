@@ -12,6 +12,15 @@ const containerNavProduct = document.getElementById("navProduct");
 const containerPrintCardPrimary = document.getElementById("cardPrimary");
 const dataContainerCart = document.getElementById("containerCart");
 let cantProductCart = document.getElementById('cant-product');
+let toBuy = document.getElementById('toBuy').addEventListener('click', function () {
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Tu compra se realizo con exito!',
+        showConfirmButton: false,
+        timer: 1500
+      })
+})
 
 /************** Get data from storage. **************/
 function addToDataStorage() {
