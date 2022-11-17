@@ -1,7 +1,6 @@
 
-// (array) To save products from the cart.
-
-let cart = JSON.parse(localStorage.getItem('Cart')) || []; // (Uso de operadores)
+// Analyze in cart storage.
+let cart = JSON.parse(localStorage.getItem('Cart')) || []; 
 
 
 // Selecte
@@ -14,7 +13,7 @@ const containerPrintCardPrimary = document.getElementById("cardPrimary")
 const dataContainerCart = document.getElementById("containerCart");
 let cantProductCart = document.getElementById('cant-product')
 
-
+/************** Get data from storage. **************/
 function addToDataStorage() {
     if (cart !== []) {
     
@@ -26,7 +25,7 @@ function addToDataStorage() {
 }
 addToDataStorage()
 
-/************** Get the data from the JSON. **************/
+/************** Get data from JSON. **************/
 function baseDatoJson() {
     
     fetch('product.json')
@@ -116,6 +115,7 @@ function addToCart(dataProduct) {
 
 }
 
+// /************** Render to cart product . **************/
 function printProductCart(buyProduct) {
         
     document.getElementById("containerCart").innerHTML += `
@@ -146,6 +146,7 @@ function printProductCart(buyProduct) {
         </div>
     `;
 
+    // get all cart ids
     cart.forEach(product => {
         
         document.getElementById(`minus${product.id}`).addEventListener("click", function () {
@@ -156,10 +157,6 @@ function printProductCart(buyProduct) {
         });
     });
 }
-
-
-
-
 
 /************** Add the total price to the cart and print is value. **************/
 function totalPrice() {
@@ -181,6 +178,7 @@ function totalPrice() {
     
 }
 
+/************** Increase cart card.  **************/
 function plusCart(prod) {
 
     let cantProductCart = document.getElementById(`cant-product${prod.id}`)
@@ -202,6 +200,7 @@ function plusCart(prod) {
     }
 }
 
+/************** decrease cart card. **************/
 function minusCart(prod) {
 
     let cantProductCart = document.getElementById(`cant-product${prod.id}`)
@@ -249,14 +248,10 @@ function minusCart(prod) {
             alltotal2.innerText = dataCant;
         }
 
-    } else {
-
-        alert("No existen productos para eliminar")
-
-    }
+    } 
 }
 
-/************** delete to the Cart **************/
+/************** delete to cart **************/
 function deleteCart() {
 
     // const dataContainerCart = document.getElementById("containerCart");
@@ -308,10 +303,6 @@ function deleteCart() {
         })
     }
 }
-
-
-
-
 
 /************** Add the pagination product to the home. **************/
 function paginationProduct() {
