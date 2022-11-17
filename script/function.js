@@ -12,28 +12,6 @@ const containerNavProduct = document.getElementById("navProduct");
 const containerPrintCardPrimary = document.getElementById("cardPrimary");
 const dataContainerCart = document.getElementById("containerCart");
 let cantProductCart = document.getElementById('cant-product');
-let toBuy = document.getElementById('toBuy').addEventListener('click', function () {
-    Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Tu compra se realizo con exito!',
-        showConfirmButton: false,
-        timer: 1500
-    })
-    dataContainerCart.innerHTML = '';
-                
-    localStorage.clear();
-    
-    // print the total price in the cart.
-    alltotal.innerText = `Total: $ `;
-
-    // print the total price in the navbar.
-    alltotal2.innerText = '';
-
-    setTimeout(function () {
-        location.reload()
-    },1650);
-})
 
 /************** Get data from storage. **************/
 function addToDataStorage() {
@@ -65,7 +43,6 @@ function baseDatoJson() {
     
 }
 baseDatoJson()
-
 /************** Render the function to the screen. **************/
 function renderPorduct(productAddJson) {
 
@@ -357,9 +334,7 @@ function minusCart(prod) {
 
 /************** delete to cart **************/
 function deleteCart() {
-
-    // const dataContainerCart = document.getElementById("containerCart");
-
+    
     if (cart.length !== 0) {
 
         Swal.fire({
@@ -408,6 +383,32 @@ function deleteCart() {
         })
     }
 }
+/************** Purchasing processing **************/
+function toBuy() {
+    document.getElementById('toBuy').addEventListener('click', function () {
+        Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Tu compra se realizo con exito!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+        dataContainerCart.innerHTML = '';
+                    
+        localStorage.clear();
+        
+        // print the total price in the cart.
+        alltotal.innerText = `Total: $ `;
+    
+        // print the total price in the navbar.
+        alltotal2.innerText = '';
+    
+        setTimeout(function () {
+            location.reload()
+        },1650);
+    })
+}
+toBuy()
 
 /************** Add the pagination product to the home. **************/
 function paginationProduct() {
