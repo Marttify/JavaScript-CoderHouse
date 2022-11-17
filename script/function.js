@@ -1,6 +1,6 @@
 
 // Analyze in cart storage.
-let cart = JSON.parse(localStorage.getItem('Cart')) || []; 
+let cart = JSON.parse(localStorage.getItem('Cart')) || [];
 
 
 // Selecte
@@ -9,18 +9,23 @@ const alltotal2 = document.getElementById("total-carrito2");
 const container = document.getElementById("cartContainer");
 const containerNameProduct = document.getElementById("nameProduct");
 const containerNavProduct = document.getElementById("navProduct");
-const containerPrintCardPrimary = document.getElementById("cardPrimary")
+const containerPrintCardPrimary = document.getElementById("cardPrimary");
 const dataContainerCart = document.getElementById("containerCart");
-let cantProductCart = document.getElementById('cant-product')
+let cantProductCart = document.getElementById('cant-product');
 
 /************** Get data from storage. **************/
 function addToDataStorage() {
+
     if (cart !== []) {
     
         for (const product of cart) {
+            
             printProductCart(product)
+
         }
+
         totalPrice()
+
     }
 }
 addToDataStorage()
@@ -80,24 +85,30 @@ function renderPorduct(productAddJson) {
 function addToCart(dataProduct) {
 
     if (cart.length !== 0) {
+
         if (cart.includes(dataProduct)) {
+            
             cart.push(dataProduct)
             localStorage.setItem('Cart', JSON.stringify(cart))
-
             totalPrice()
             plusCart()
+
         } else { 
+
             cart.push(dataProduct)
             localStorage.setItem('Cart', JSON.stringify(cart))
             printProductCart(dataProduct);
             totalPrice()
+
         }
         
     } else {
+
         cart.push(dataProduct)
         localStorage.setItem('Cart', JSON.stringify(dataProduct))
         printProductCart(dataProduct)
         totalPrice()
+
     }
 
     // Add library)
@@ -152,9 +163,11 @@ function printProductCart(buyProduct) {
         document.getElementById(`minus${product.id}`).addEventListener("click", function () {
             minusCart(product);
         });
+
         document.getElementById(`plus${product.id}`).addEventListener("click", function () {
             plusCart(product);
         });
+
     });
 }
 
@@ -164,8 +177,10 @@ function totalPrice() {
     let sumaTotal = cart.map(product => product.price);
     let initialValue = 0;
     let resultTotal = sumaTotal.reduce(
+    
         (previousValue, currentValue) => previousValue + currentValue,
         initialValue
+
     );
         
     localStorage.setItem('Total price', resultTotal);
@@ -181,22 +196,55 @@ function totalPrice() {
 /************** Increase cart card.  **************/
 function plusCart(prod) {
 
-    let cantProductCart = document.getElementById(`cant-product${prod.id}`)
-    let typeDateCant = parseInt(cantProductCart.innerText)
+    let cantProductCart = document.getElementById(`cant-product${prod.id}`);
+    let typeDateCant = parseInt(cantProductCart.innerText);
 
     if (typeDateCant >= 0 && typeDateCant < 10) {
+
         if (typeDateCant !== 0) {
 
-            cantProductCart.innerText = typeDateCant + 1
-            cart.push(prod)
-            totalPrice()
+            cantProductCart.innerText = typeDateCant + 1;
+            cart.push(prod);
+            totalPrice();
+            // Add library)
+            Swal.fire({
+                
+                title: `${prod.name}!`,
+                text: `Se agrego al carrito!`,
+                imageUrl: `${prod.img}`,
+                imageWidth: '50%',
+                imageHeight: 'auto',
+                imageAlt: `${prod.name}`,
+                backdrop: 'dark',
+
+            });
 
         } else {
-            cantProductCart.innerText = 1 
+
+            cantProductCart.innerText = 1;
+            // Add library)
+            Swal.fire({
+                
+                title: `${prod.name}!`,
+                text: `Se agrego al carrito!`,
+                imageUrl: `${prod.img}`,
+                imageWidth: '50%',
+                imageHeight: 'auto',
+                imageAlt: `${prod.name}`,
+                backdrop: 'dark',
+
+            });
+
         }
+
     } else if (typeDateCant === 10) {
 
-        alert("Llego a la cantidad maxima")
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No puedes superar la cantidad maxima!',
+            footer: '<a href="#">Por que tengo este problema?</a>'
+        })
     }
 }
 
@@ -229,6 +277,19 @@ function minusCart(prod) {
             // print the total price in the cart.
             alltotal2.innerText = restaPrice;
 
+            // Add library)
+            Swal.fire({
+                
+                title: `${prod.name}!`,
+                text: `Se elimino del carrito!`,
+                imageUrl: `${prod.img}`,
+                imageWidth: '50%',
+                imageHeight: 'auto',
+                imageAlt: `${prod.name}`,
+                backdrop: 'dark',
+
+            });
+
         } else {
 
             cart.splice(prod) 
@@ -246,6 +307,19 @@ function minusCart(prod) {
     
             // print the total price in the cart.
             alltotal2.innerText = dataCant;
+
+            // Add library)
+            Swal.fire({
+                
+                title: `${prod.name}!`,
+                text: `Se elimino del carrito!`,
+                imageUrl: `${prod.img}`,
+                imageWidth: '50%',
+                imageHeight: 'auto',
+                imageAlt: `${prod.name}`,
+                backdrop: 'dark',
+
+            });
         }
 
     } 
