@@ -1,0 +1,58 @@
+[
+    {
+        "name" : "Familia lechuza",
+        "id": 0,
+        "price": 1500,
+        "img": "assets/image/bienvenidos.jpeg",
+        "stock": 3
+    },
+    {
+        "name" : "Porta Saumerio",
+        "id": 1,
+        "price": 500,
+        "img": "assets/image/saumerio.jpeg",
+        "stock": 3
+    },
+    {
+        "name" : "Jarrones",
+        "id": 2,
+        "price": 2500,
+        "img": "assets/image/cascadaAromatizada.jpeg",
+        "stock": 3
+    },
+    {
+        "name" : "Gato negro",
+        "id": 3,
+        "price": 1700,
+        "img": "assets/image/catBlack.jpeg",
+        "stock": 3
+    },
+    {
+        "name" : "Gato White",
+        "id": 5,
+        "price": 1700,
+        "img": "assets/image/catWhite.jpeg",
+        "stock": 3
+    },
+    {
+        "name" : "Bienvenida",
+        "id": 6,
+        "price": 1900,
+        "img": "assets/image/welcomeDogs.jpeg",
+        "stock": 3
+    },
+    {
+        "name" : "Lechuza",
+        "id": 7,
+        "price": 1230,
+        "img": "assets/image/lechuza.jpeg",
+        "stock": 3
+    },
+    {
+        "name" : "s",
+        "id": 8,
+        "price": 1600,
+        "img": "assets/image/s.jpeg",
+        "stock": 3
+    }
+]

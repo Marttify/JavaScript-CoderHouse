@@ -1,51 +1,50 @@
 
 // (array) To save products from the cart.
-let cart;
-cart = JSON.parse(localStorage.getItem('Cart')) || []; // (Uso de operadores)
 
-let cartTotal;
-cartTotal = JSON.parse(localStorage.getItem('TotalPrice')) || 0;
-
-if (cart.length != 0) {
-    
-    cart.reduce((allProducttSelecte, card) => {
-        return [...allProducttSelecte, ...card];
-    },[])
-    
-    printProductCart(cart);
-
-    // for (const product of cart) {
-    //     totalPrice()
-    // }
-    console.log("Recuperando carro" + cart);
-
-}
+let cart = JSON.parse(localStorage.getItem('Cart')) || []; // (Uso de operadores)
 
 
 // Selecte
-
 const alltotal = document.getElementById("total-carrito");
 const alltotal2 = document.getElementById("total-carrito2");
-
 const container = document.getElementById("cartContainer");
 const containerNameProduct = document.getElementById("nameProduct");
 const containerNavProduct = document.getElementById("navProduct");
-const containerAcordionExample = document.getElementById("accordionExample")
-const containerAdvertisingCard = document.getElementById("advertisingCard")
-const containerPrintCarousel = document.getElementById("carouselExampleDark")
 const containerPrintCardPrimary = document.getElementById("cardPrimary")
+const dataContainerCart = document.getElementById("containerCart");
+let cantProductCart = document.getElementById('cant-product')
 
+
+function addToDataStorage() {
+    if (cart !== []) {
     
-// Discount day
-const discountDay = true // false (Print without discount(cart/screen))
+        for (const product of cart) {
+            printProductCart(product)
+        }
+        totalPrice()
+    }
+}
+addToDataStorage()
 
-
+/************** Get the data from the JSON. **************/
+function baseDatoJson() {
+    
+    fetch('product.json')
+    .then(function (res) {
+        return res.json();
+    })
+    .then(function (data) { 
+        renderPorduct(data)
+    })
+    
+}
+baseDatoJson()
 
 /************** Render the function to the screen. **************/
-function renderPorduct() {
+function renderPorduct(productAddJson) {
 
     // To print the cards on the screen 
-    for (const product of allProductt) {
+    for (const product of productAddJson) {
 
         container.innerHTML += `
 
@@ -57,8 +56,7 @@ function renderPorduct() {
 
                     <h5 class="card-title">Stock: ${product.stock}</h5>
                     <p class="card-text">${product.name}</p>
-                    <p class="card-text text-muted">$<s>${product.price}</s></p>
-                    <p class="card-text">${product.discount()}</p>
+                    <p class="card-text text-muted">$${product.price}</p>
                     <button id="btn${product.id}" class="btn btn-outline-success">Comprar</button>
 
                 </div>
@@ -69,92 +67,62 @@ function renderPorduct() {
     }
 
     //Event
-    allProductt.forEach(product => {
+    productAddJson.forEach(product => {
 
         //Event for button
         document.getElementById(`btn${product.id}`).addEventListener("click", function () {
-
             addToCart(product);
-            totalPrice();
-
         });
 
     })
 }
 
-renderPorduct();
+// /************** Add the selected product to the cart. **************/
+function addToCart(dataProduct) {
 
-/************** Add the pagination product to the home. **************/
-function paginationProduct() {
-    containerNavProduct.innerHTML = `
-        <ul class="pagination">
-            <li class="page-item disabled">
-                <a class="page-link text-success" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-            </li>
-            <li class="page-item active" aria-current="page"><a class="page-link bg-success text-white" href="#">1</a></li>
-            <li class="page-item"><a class="page-link text-success" href="#">2 </a></li>
-            <li class="page-item"><a class="page-link text-success" href="#">3</a></li>
-            <li class="page-item"><a class="page-link text-success" href="#">4</a></li>
-            <li class="page-item"><a class="page-link text-success" href="#">5</a></li>
-            <li class="page-item">
-                <a class="page-link text-success" href="#">Next</a>
-            </li>
-        </ul>
-    `
-}
+    if (cart.length !== 0) {
+        if (cart.includes(dataProduct)) {
+            cart.push(dataProduct)
+            localStorage.setItem('Cart', JSON.stringify(cart))
 
-paginationProduct()
-
-
-/************** Add the acordion example to the home. **************/
-function cardPrimary() {
-    containerPrintCardPrimary.innerHTML = `
-        <div class="card-header">
-            Featured
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-success">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-            2 days ago
-        </div>
-    `
-}
-
-cardPrimary()
-
-/************** Add the selected product to the cart. **************/
-function addToCart(print) {
+            totalPrice()
+            plusCart()
+        } else { 
+            cart.push(dataProduct)
+            localStorage.setItem('Cart', JSON.stringify(cart))
+            printProductCart(dataProduct);
+            totalPrice()
+        }
+        
+    } else {
+        cart.push(dataProduct)
+        localStorage.setItem('Cart', JSON.stringify(dataProduct))
+        printProductCart(dataProduct)
+        totalPrice()
+    }
 
     // Add library)
     Swal.fire({
-
-        title: `${print.name}!`,
+        
+        title: `${dataProduct.name}!`,
         text: `Se agrego al carrito!`,
-        imageUrl: `${print.img}`,
+        imageUrl: `${dataProduct.img}`,
         imageWidth: '50%',
         imageHeight: 'auto',
-        imageAlt: `${print.name}`,
+        imageAlt: `${dataProduct.name}`,
         backdrop: 'dark',
 
     });
 
-    cart.push(print)
-    localStorage.setItem('Cart', JSON.stringify(cart))
-
-    // Print the card in the cart.
-    printProductCart(print);
 }
 
 function printProductCart(buyProduct) {
-
+        
     document.getElementById("containerCart").innerHTML += `
 
         <div class="cart__To--The-Product mt-5 mb-5">
 
-            <div class="cart-Items d-flex flex-row justify-content-around text-center align-items-center">
+            <div id='${buyProduct.id}' class="cart-Items d-flex flex-row justify-content-around text-center align-items-center">
 
                 <img class="w-25" src="${buyProduct.img}" alt="producto">
                 
@@ -163,59 +131,137 @@ function printProductCart(buyProduct) {
                     <h3 class="cart__Nombre">
                         ${buyProduct.name}
                     </h3>
-
-                    <span class="cart__Precio">
-                        $${buyProduct.discountPrice()}
-                    </span>
-
+                    <p>$${buyProduct.price}</p>
                 </div>
 
                 <div class=" d-flex flex-row">
 
-                    <div class="btn minus">-</div>
-                    <span class="cuenta-carrito h-25 w-25">0</span>
-                    <div class="btn plus">+</div>
+                    <div class="btn" id='minus${buyProduct.id}' >-</div>
+                    <span class="h-25 w-25" id='cant-product${buyProduct.id}'>1</span>
+                    <div class="btn" id='plus${buyProduct.id}' >+</div>
 
                 </div>
 
             </div>
         </div>
     `;
+
+    cart.forEach(product => {
+        
+        document.getElementById(`minus${product.id}`).addEventListener("click", function () {
+            minusCart(product);
+        });
+        document.getElementById(`plus${product.id}`).addEventListener("click", function () {
+            plusCart(product);
+        });
+    });
 }
+
+
+
+
 
 /************** Add the total price to the cart and print is value. **************/
 function totalPrice() {
 
-    // (Conditional) To know if there is a discount or not.
-    if (discountDay === true ) {
+    let sumaTotal = cart.map(product => product.price);
+    let initialValue = 0;
+    let resultTotal = sumaTotal.reduce(
+        (previousValue, currentValue) => previousValue + currentValue,
+        initialValue
+    );
         
-        const acumulator = (acum, producto) => acum + producto.discountPrice();
-        cartTotal = cart.reduce(acumulator, 0);
-        localStorage.setItem('TotalPrice', cartTotal);
-
-    } else {
-
-        // price 
-        const acumulator = (accumulator, producto) => accumulator + producto.price;
-        cartTotal = cart.length > 0 ? cart.reduce(acumulator) : 0;
+    localStorage.setItem('Total price', resultTotal);
         
-        localStorage.setItem('TotalPrice', cartTotal)
-
-    }
-
     // print the total price in the navbar.
-    alltotal.innerText = `Total: $${cartTotal}`;
+    alltotal.innerText = `Total: $${resultTotal}`;
 
     // print the total price in the cart.
-    alltotal2.innerText = cartTotal;
+    alltotal2.innerText = resultTotal;
     
 }
 
+function plusCart(prod) {
+
+    let cantProductCart = document.getElementById(`cant-product${prod.id}`)
+    let typeDateCant = parseInt(cantProductCart.innerText)
+
+    if (typeDateCant >= 0 && typeDateCant < 10) {
+        if (typeDateCant !== 0) {
+
+            cantProductCart.innerText = typeDateCant + 1
+            cart.push(prod)
+            totalPrice()
+
+        } else {
+            cantProductCart.innerText = 1 
+        }
+    } else if (typeDateCant === 10) {
+
+        alert("Llego a la cantidad maxima")
+    }
+}
+
+function minusCart(prod) {
+
+    let cantProductCart = document.getElementById(`cant-product${prod.id}`)
+    let typeDateCant = parseInt(cantProductCart.innerText)
+
+    if (typeDateCant !== '') { 
+
+        if (typeDateCant !== 1) {
+
+            cantProductCart.innerText = typeDateCant - 1
+
+            let sumaTotal = cart.map(product => product.price);
+
+            let initialValue = 0;
+            let resultTotal = sumaTotal.reduce(
+                (previousValue, currentValue) => previousValue + currentValue,
+                initialValue
+            );
+            let restaPrice = resultTotal - prod.price
+            
+            localStorage.setItem('Total price', restaPrice);
+            
+            // print the total price in the navbar.
+            alltotal.innerText = `Total: $${restaPrice}`;
+    
+            // print the total price in the cart.
+            alltotal2.innerText = restaPrice;
+
+        } else {
+
+            cart.splice(prod) 
+            localStorage.setItem('Cart', JSON.stringify(cart));
+
+            document.getElementById(`${prod.id}`).innerHTML = ''
+
+            let totalPriceData = document.getElementById("total-carrito2");
+            let cant = parseInt(totalPriceData.innerText)
+
+            let dataCant = cant - prod.price
+
+            // print the total price in the navbar.
+            alltotal.innerText = `Total: $${dataCant}`;
+    
+            // print the total price in the cart.
+            alltotal2.innerText = dataCant;
+        }
+
+    } else {
+
+        alert("No existen productos para eliminar")
+
+    }
+}
+
+/************** delete to the Cart **************/
 function deleteCart() {
 
-    const dataContainerCart = document.getElementById("containerCart");
+    // const dataContainerCart = document.getElementById("containerCart");
 
-    if (dataContainerCart.innerHTML !== '') {
+    if (cart.length !== 0) {
 
         Swal.fire({
 
@@ -237,16 +283,17 @@ function deleteCart() {
                     'success'
                 )
 
+                
                 dataContainerCart.innerHTML = '';
-                cart = []
-                cartTotal = 0
-                localStorage.removeItem('Cart')
-                localStorage.removeItem('TotalPrice')
-                // print the total price in the navbar.
+                
+                localStorage.clear();
+                
+                // print the total price in the cart.
                 alltotal.innerText = `Total: $ `;
 
-                // print the total price in the cart.
-                alltotal2.innerText = " ";
+                // print the total price in the navbar.
+                alltotal2.innerText = '';
+                
             }
         })
 
@@ -262,27 +309,47 @@ function deleteCart() {
     }
 }
 
+
+
+
+
+/************** Add the pagination product to the home. **************/
+function paginationProduct() {
+    containerNavProduct.innerHTML = `
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link text-success" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active" aria-current="page"><a class="page-link bg-success text-white" href="#">1</a></li>
+            <li class="page-item"><a class="page-link text-success" href="#">2 </a></li>
+            <li class="page-item"><a class="page-link text-success" href="#">3</a></li>
+            <li class="page-item"><a class="page-link text-success" href="#">4</a></li>
+            <li class="page-item"><a class="page-link text-success" href="#">5</a></li>
+            <li class="page-item">
+                <a class="page-link text-success" href="#">Next</a>
+            </li>
+        </ul>
+    `
+}
+paginationProduct()
+
+/************** Add the acordion example to the home. **************/
+function cardPrimary() {
+    containerPrintCardPrimary.innerHTML = `
+        <div class="card-header">
+            Featured
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Special title treatment</h5>
+            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-success">Go somewhere</a>
+        </div>
+        <div class="card-footer text-muted">
+            2 days ago
+        </div>
+    `
+}
+cardPrimary()
+
 //Event for button
 const eventDelete = document.getElementById('deleteCart').addEventListener("click", deleteCart);
-
-
-
-
-
-
-/*****
-
-
-
-    Consigna de la tercera entrega del proyecto final!!
-
-    ## Optimizarás tu proyecto final a través de la puesta en práctica de lo visto en esta clase según sea conveniente en cada caso.
-    Aspectos a incluir
-
-    ## Operador Ternario / AND / OR. Busca estructuras condicionales simples en tu proyecto y simplifícalas utilizando operador ternario u operadores lógicos AND y OR.
-    Optimización. Con lo visto en clase, optimiza la asignación condicional de variables.
-    Desestructuración. Aplica la desestructuración según corresponda para recuperar propiedades de objetos con claridad y rapidez.
-    Spread. Usa el operador spread para replicar objetos o arrays o, también, para mejorar la lógica de tus funciones.
-
-
-*****/
