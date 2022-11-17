@@ -254,7 +254,7 @@ function minusCart(prod) {
     let cantProductCart = document.getElementById(`cant-product${prod.id}`)
     let typeDateCant = parseInt(cantProductCart.innerText)
 
-    if (typeDateCant !== '') { 
+    if (typeDateCant !== 0 ) { 
 
         if (typeDateCant !== 1) {
 
@@ -290,17 +290,21 @@ function minusCart(prod) {
 
             });
 
+            if (restaPrice === 0) {
+                location.reload();
+            }
+
         } else {
 
             cart.splice(prod) 
             localStorage.setItem('Cart', JSON.stringify(cart));
 
-            document.getElementById(`${prod.id}`).innerHTML = ''
+            document.getElementById(`${prod.id}`).innerHTML = '';
 
             let totalPriceData = document.getElementById("total-carrito2");
-            let cant = parseInt(totalPriceData.innerText)
+            let cant = parseInt(totalPriceData.innerText);
 
-            let dataCant = cant - prod.price
+            let dataCant = cant - prod.price;
 
             // print the total price in the navbar.
             alltotal.innerText = `Total: $${dataCant}`;
@@ -320,6 +324,10 @@ function minusCart(prod) {
                 backdrop: 'dark',
 
             });
+
+            if (dataCant === 0) {
+                location.reload();
+            }
         }
 
     } 
@@ -362,7 +370,8 @@ function deleteCart() {
 
                 // print the total price in the navbar.
                 alltotal2.innerText = '';
-                
+                location.reload();
+
             }
         })
 
