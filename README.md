@@ -1,48 +1,82 @@
-# Hola, soy Martin 👋
 
+---
 
+# 👋 ¡Hola! Soy Martin
 
-### Este repositorio consta de utilizar lo aprendido dentro del curso para crear una APLICACION WEB INTERACTIVA
-    
-#### Proyecto: Crear un simulador a eleccion.
+### Bienvenido a mi proyecto: **Simulador Web Interactivo**
 
-## Sobre el curso
-https://drive.google.com/file/d/13HzynwN1yZNb7QKqfNBgXvoo4hJSkyKT/view
+Este repositorio forma parte del curso de **Desarrollo Web en CoderHouse**, y tiene como objetivo aplicar los conocimientos aprendidos para crear una **aplicación web interactiva** desde cero.
 
+---
 
-https://java-script-jnidpj1al-aguilar1998s-projects.vercel.app/
+## 🚀 Proyecto
 
-¿Cómo lo ejecuto en local?
+**Objetivo:** Crear un simulador a elección, aplicando manipulación del DOM, eventos, y almacenamiento local.
 
-    git clone https://github.com/Aguilar1998/PreEntrega1-Aguilar.git
-    cd PreEntrega3-Aguilar # ingresar a la carpeta del proyecto
-    npm install # instalar las dependencias
-    npm run watch-scss # correr SASS
+🔗 **Demo del proyecto:**
+👉 [Ver aplicación en Vercel](https://java-script-jnidpj1al-aguilar1998s-projects.vercel.app/)
 
+📄 **Material del curso:**
+[Acceder al programa del curso](https://drive.google.com/file/d/13HzynwN1yZNb7QKqfNBgXvoo4hJSkyKT/view)
 
-¿Aceptas Pull Request?
+---
 
-    ¡No por el momento! Lo cierto es que este repositorio forma parte del curso en CoderHouse y hasta ser finalizado no sera posible aceptar Request. 
+## ⚙️ Instalación y ejecución local
 
+Sigue estos pasos para ejecutar el proyecto en tu entorno local:
 
-# Interactividades a incorporar:
-```text
- 🔹 Renderizar el carrito utilizando DOM.
- 🔹 Comprar productos desde el boton de la card, si se presiona dos o mas veces sumar el precio solamente.
- 🔹 Sumar productos desde el carrito individualmente y eliminarlos si solo hay uno y se indica "-", (+ y -) .
- 🔹 Que al sumar productos desde el carrito el precio aumente y disminuya segun el valor del producto agregado o eliminado.
- 🔹 Mostrar mensajes al realizar cada tarea.
+```bash
+# Clonar el repositorio
+git clone https://github.com/Marttify/JavaScript-CoderHouse.git
+
+# Ingresar a la carpeta del proyecto
+cd JavaScript-CoderHouse
+
+# Instalar dependencias
+npm i
+
+# Compilar y observar cambios en SASS
+npm run watch-scss
 ```
 
+---
 
-## Tecnologías utilizadas
+## 🔧 Interactividad implementada
 
-- HTML5
-- CSS3
-- SASS
-- Bootstrap 5 
-- Font Awezome
-- Javascript
-- Sweetalert2 
+El proyecto incluye diversas funcionalidades interactivas basadas en JavaScript y manipulación del DOM:
 
+```text
+🔹 Renderizado dinámico del carrito de compras.
+🔹 Agregar productos desde las cards (si se repite, solo se suma el precio).
+🔹 Sumar o eliminar productos directamente desde el carrito (+ / -).
+🔹 Actualización automática del total según los productos agregados o eliminados.
+🔹 Notificaciones visuales al realizar cada acción (mediante SweetAlert2).
+```
 
+---
+
+## 🧰 Tecnologías utilizadas
+
+* **HTML5**
+* **CSS3**
+* **SASS**
+* **Bootstrap 5**
+* **Font Awesome**
+* **JavaScript**
+* **SweetAlert2**
+
+---
+
+## 🤝 Contribuciones
+
+Por el momento **no se aceptan Pull Requests**, ya que este repositorio forma parte del curso en CoderHouse y se encuentra en desarrollo académico.
+Una vez finalizado el curso, consideraré abrirlo a colaboraciones.
+
+---
+
+## 🧑‍💻 Autor
+
+**Martin Aguilar**
+📬 [GitHub: Aguilar1998](https://github.com/Aguilar1998)
+
+---
